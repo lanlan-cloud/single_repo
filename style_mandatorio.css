@@ -1,0 +1,61 @@
+* {
+    padding: 2px;
+    margin: 10px;
+}
+
+body {
+    background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    color: rgb(93, 164, 192);
+    font-family: "Krona One";
+    font-size: 25px;
+
+    text-align: center;
+    margin: 20px;
+    height: 80vh;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #fbfdfd;
+    color: #22D4FD;
+    border: none;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 4px #999;
+
+}
+
+.h1 {
+    color: #22D4FD;
+
+}
+
+.titulodestaque {
+    color: #22D4FD;
+}
+
+.logo {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.urgente {
+    color: #575554;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.presentacion {
+    display: flex;
+    align-items: center;
+    margin: 5%;
+    justify-content: space-between;
+}
