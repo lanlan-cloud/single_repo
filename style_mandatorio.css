@@ -44,10 +44,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 40px;
-<<<<<<< HEAD
     /* Espacio uniforme entre elementos */
-=======
->>>>>>> 12f68e591401738330fb50a8b95b143b6afc8bd5
     width: 100%;
     max-width: 900px;
 }
@@ -75,12 +72,8 @@ body {
 }
 
 .presentacion__imagen:hover {
-<<<<<<< HEAD
     transform: scale(1.05);
     /* Efecto sutil al pasar el mouse */
-=======
-    transform: scale(1.08);
->>>>>>> 12f68e591401738330fb50a8b95b143b6afc8bd5
 }
 
 /* ================================ */
@@ -95,20 +88,13 @@ body {
 
 .presentacion__contenido__titulo {
     font-size: 2.5rem;
-<<<<<<< HEAD
     /* Usamos 'rem' para un mejor escalado */
-=======
->>>>>>> 12f68e591401738330fb50a8b95b143b6afc8bd5
     color: var(--color-highlight);
 }
 
 .titulodestaque {
     color: var(--color-white);
-<<<<<<< HEAD
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-=======
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.7);
->>>>>>> 12f68e591401738330fb50a8b95b143b6afc8bd5
 }
 
 .presentacion__contenido__texto {
@@ -131,9 +117,6 @@ body {
     justify-content: center;
     width: 100%;
     max-width: 400px;
-<<<<<<< HEAD
-    /* Ancho máximo para que no se vean muy anchos en pantallas grandes */
-=======
     flex-wrap: wrap;
 }
 
@@ -146,7 +129,6 @@ body {
     max-width: 300px;
     flex-wrap: wrap;
     margin-top: 15px;
->>>>>>> 12f68e591401738330fb50a8b95b143b6afc8bd5
 }
 
 .btn {
@@ -160,7 +142,8 @@ body {
     cursor: pointer;
     border-radius: 12px;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-    flex-grow: 1; /* Permite que los botones crezcan y ocupen el espacio disponible */
+    flex-grow: 1;
+    /* Permite que los botones crezcan y ocupen el espacio disponible */
 }
 
 .btn:hover {
@@ -170,28 +153,6 @@ body {
 
 .btn-ebook {
     border-radius: 50%;
-<<<<<<< HEAD
-    /* Esto lo hace completamente redondo */
-    width: 100px;
-    /* Ancho fijo para que sea un círculo */
-    height: 100px;
-    /* Alto fijo para que sea un círculo */
-    display: flex;
-    /* Para centrar el texto dentro del botón */
-    justify-content: center;
-    align-items: center;
-    /* Puedes ajustar colores si quieres que sea diferente */
-    background-color: var(--color-highlight);
-    /* Color de fondo */
-    color: var(--color-white);
-    /* Color de texto */
-    border: none;
-    /* Quitamos el borde si no lo quieres */
-    font-size: 1rem;
-    /* Ajusta el tamaño de fuente si es necesario */
-    padding: 0;
-    /* Quitamos el padding para que el tamaño sea solo width/height */
-=======
     width: 90px;
     height: 90px;
     display: flex;
@@ -203,21 +164,16 @@ body {
     font-size: 0.9rem;
     padding: 0;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
->>>>>>> 12f68e591401738330fb50a8b95b143b6afc8bd5
 }
 
 .btn-ebook:hover {
     transform: scale(1.1);
-<<<<<<< HEAD
     /* Un efecto de escala al pasar el mouse */
-    background-color: darken(var(--color-highlight), 10%);
+    /* background-color: darken(var(--color-highlight), 10%); */
     /* Oscurece el color al pasar el mouse (si usas preprocesadores) */
     /* O simplemente un color diferente: */
     background-color: #1a9bc0;
     /* Un azul ligeramente más oscuro */
-=======
-    background-color: #1a9bc0;
->>>>>>> 12f68e591401738330fb50a8b95b143b6afc8bd5
 }
 
 footer {
@@ -229,14 +185,8 @@ footer {
 /* =================================== */
 /* --- 6. Responsive Design (Móvil) --- */
 /* =================================== */
-<<<<<<< HEAD
-@media (min-width: 768px) {
-    .presentacion__botones {
-        flex-direction: row;
-        /* En pantallas más grandes, los botones se colocan en fila */
-        justify-content: center;
-=======
 @media (max-width: 480px) {
+
     .presentacion__botones,
     .presentacion__botones-inferiores {
         flex-direction: column;
@@ -246,6 +196,4 @@ footer {
     .btn {
         flex-grow: 0;
         width: 100%;
->>>>>>> 12f68e591401738330fb50a8b95b143b6afc8bd5
     }
-}
