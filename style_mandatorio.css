@@ -1,25 +1,21 @@
-* {
-    padding: 2px;
-    margin: 10px;
-}
+/* --- Propuesta 2: Diseño de Portada --- */
 
+/* Mantenemos la base de body y botones */
 body {
     background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
     color: rgb(93, 164, 192);
-    font-family: "Krona One";
+    font-family: "Krona One", sans-serif;
     font-size: 25px;
-
-    text-align: center;
-    margin: 20px;
-    height: 80vh;
-    box-sizing: border-box;
+    margin: 0;
+    padding: 40px;
+    min-height: 100vh;
 }
 
-button {
+button, .btn {
     background-color: #fbfdfd;
     color: #22D4FD;
     border: none;
-    padding: 10px 10px;
+    padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -28,29 +24,77 @@ button {
     cursor: pointer;
     border-radius: 12px;
     box-shadow: 0 4px #999;
-
 }
 
-.h1 {
-    color: #22D4FD;
+/* --- LA MAGIA DEL ACOMODO (CSS Grid) --- */
 
+.presentacion {
+    display: grid; /* 1. Activamos Grid */
+    /* Todos los elementos se colocarán en la misma celda para superponerse */
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center; /* Centramos todo horizontalmente */
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    position: relative; /* Necesario para el z-index */
+}
+
+/* 2. Todos los elementos van a la misma celda por defecto */
+.presentacion > * {
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 2; /* Por defecto, todo está por encima del fondo */
+}
+
+.presentacion > .logo {
+    width: 100%;
+    max-width: 600px;
+    opacity: 0.2; /* Hacemos la imagen transparente */
+    z-index: 1; /* La ponemos detrás de todo */
+    transform: scale(1.5); /* La hacemos un poco más grande */
+}
+
+.presentacion > h1 {
+    font-size: 2.5rem;
+    margin-bottom: 150px; /* Empujamos otros elementos hacia abajo */
+    color: #FFF; /* Texto blanco para que resalte */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.presentacion > p:first-of-type {
+    margin-bottom: 50px;
+    font-size: 1.5rem;
+    color: #FFF;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.presentacion > a[href="#services"],
+.presentacion > a[href="#contact"] {
+    margin-top: 30px;
+}
+
+.presentacion > .urgente {
+    margin-top: 150px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #575554;
+}
+
+.presentacion > button,
+.presentacion > a[href="#about"] {
+    margin-top: 200px;
+}
+
+.presentacion > footer {
+    margin-top: 300px;
+    font-size: 0.9rem;
 }
 
 .titulodestaque {
     color: #22D4FD;
-}
-
-.logo {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.urgente {
-    color: #575554;
-    font-weight: bold;
-    font-size: 30px;
 }
 
 .presentacion {
