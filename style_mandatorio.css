@@ -1,105 +1,129 @@
-/* --- Propuesta 2: Diseño de Portada --- */
+/* ========================================= */
+/* --- 1. Variables CSS (Mejores Prácticas) --- */
+/* ========================================= */
+:root {
+    --color-primary: #5d9cb8; /* Color de texto principal */
+    --color-highlight: #22D4FD; /* Color de destaque */
+    --color-bg-start: #fbc2eb; /* Color del degradado (inicio) */
+    --color-bg-end: #a6c1ee; /* Color del degradado (fin) */
+    --color-white: #ffffff;
+    --font-family: 'Krona One', sans-serif;
+}
 
-/* Mantenemos la base de body y botones */
-body {
-    background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
-    color: rgb(93, 164, 192);
-    font-family: "Krona One", sans-serif;
-    font-size: 25px;
+
+/* =========================== */
+/* --- 2. Base & Reset CSS --- */
+/* =========================== */
+* {
     margin: 0;
-    padding: 40px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to top, var(--color-bg-start) 0%, var(--color-bg-end) 100%);
+    font-family: var(--font-family);
+    color: var(--color-primary);
     min-height: 100vh;
-}
-
-button, .btn {
-    background-color: #fbfdfd;
-    color: #22D4FD;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 12px;
-    box-shadow: 0 4px #999;
-}
-
-/* --- LA MAGIA DEL ACOMODO (CSS Grid) --- */
-
-.presentacion {
-    display: grid; /* 1. Activamos Grid */
-    /* Todos los elementos se colocarán en la misma celda para superponerse */
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-items: center; /* Centramos todo horizontalmente */
+    padding: 2rem;
     text-align: center;
+}
+
+
+/* ======================================= */
+/* --- 3. Sección Principal (Flexbox) --- */
+/* ======================================= */
+.presentacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* Espacio uniforme entre elementos */
     width: 100%;
     max-width: 900px;
-    margin: auto;
-    position: relative; /* Necesario para el z-index */
 }
 
-/* 2. Todos los elementos van a la misma celda por defecto */
-.presentacion > * {
-    grid-column: 1;
-    grid-row: 1;
-    z-index: 2; /* Por defecto, todo está por encima del fondo */
-}
-
-.presentacion > .logo {
+.presentacion__imagen {
     width: 100%;
-    max-width: 600px;
-    opacity: 0.2; /* Hacemos la imagen transparente */
-    z-index: 1; /* La ponemos detrás de todo */
-    transform: scale(1.5); /* La hacemos un poco más grande */
+    max-width: 450px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
 }
 
-.presentacion > h1 {
-    font-size: 2.5rem;
-    margin-bottom: 150px; /* Empujamos otros elementos hacia abajo */
-    color: #FFF; /* Texto blanco para que resalte */
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+.presentacion__imagen:hover {
+    transform: scale(1.05); /* Efecto sutil al pasar el mouse */
 }
 
-.presentacion > p:first-of-type {
-    margin-bottom: 50px;
-    font-size: 1.5rem;
-    color: #FFF;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+/* ================================ */
+/* --- 4. Contenido y Tipografía --- */
+/* ================================ */
+.presentacion__contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
 }
 
-.presentacion > a[href="#services"],
-.presentacion > a[href="#contact"] {
-    margin-top: 30px;
-}
-
-.presentacion > .urgente {
-    margin-top: 150px;
-    font-weight: bold;
-    font-size: 1rem;
-    color: #575554;
-}
-
-.presentacion > button,
-.presentacion > a[href="#about"] {
-    margin-top: 200px;
-}
-
-.presentacion > footer {
-    margin-top: 300px;
-    font-size: 0.9rem;
+.presentacion__contenido__titulo {
+    font-size: 2.5rem; /* Usamos 'rem' para un mejor escalado */
+    color: var(--color-highlight);
 }
 
 .titulodestaque {
-    color: #22D4FD;
+    color: var(--color-white);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-.presentacion {
+.presentacion__contenido__texto {
+    font-size: 1.25rem;
+}
+
+
+/* ====================== */
+/* --- 5. Botones (CTA) --- */
+/* ====================== */
+.presentacion__botones {
     display: flex;
-    align-items: center;
-    margin: 5%;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 400px; /* Ancho máximo para que no se vean muy anchos en pantallas grandes */
+}
+
+.btn {
+    background-color: var(--color-white);
+    color: var(--color-highlight);
+    border: 2px solid var(--color-highlight);
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.125rem;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: var(--color-highlight);
+    color: var(--color-white);
+}
+
+footer {
+    margin-top: 50px;
+    color: #575554;
+    font-size: 0.8rem;
+}
+
+/* =================================== */
+/* --- 6. Responsive Design (Móvil) --- */
+/* =================================== */
+@media (min-width: 768px) {
+    .presentacion__botones {
+        flex-direction: row; /* En pantallas más grandes, los botones se colocan en fila */
+        justify-content: center;
+    }
 }
