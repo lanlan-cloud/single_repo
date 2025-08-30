@@ -10,7 +10,6 @@
     --font-family: 'Krona One', sans-serif;
 }
 
-
 /* =========================== */
 /* --- 2. Base & Reset CSS --- */
 /* =========================== */
@@ -33,7 +32,6 @@ body {
     text-align: center;
 }
 
-
 /* ======================================= */
 /* --- 3. Sección Principal (Flexbox) --- */
 /* ======================================= */
@@ -41,21 +39,35 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px; /* Espacio uniforme entre elementos */
+    gap: 40px;
     width: 100%;
     max-width: 900px;
 }
 
+/* Estilo para el nuevo "card" blanco */
+.presentacion__card {
+    background-color: var(--color-white);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 600px;
+}
+
 .presentacion__imagen {
     width: 100%;
-    max-width: 450px;
+    max-width: 250px;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
 }
 
 .presentacion__imagen:hover {
-    transform: scale(1.05); /* Efecto sutil al pasar el mouse */
+    transform: scale(1.08);
 }
 
 /* ================================ */
@@ -69,29 +81,47 @@ body {
 }
 
 .presentacion__contenido__titulo {
-    font-size: 2.5rem; /* Usamos 'rem' para un mejor escalado */
+    font-size: 2.5rem;
     color: var(--color-highlight);
 }
 
 .titulodestaque {
     color: var(--color-white);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.7);
 }
 
 .presentacion__contenido__texto {
     font-size: 1.25rem;
 }
 
+.urgente {
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    margin-top: 15px;
+}
 
 /* ====================== */
 /* --- 5. Botones (CTA) --- */
 /* ====================== */
 .presentacion__botones {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 16px;
+    justify-content: center;
     width: 100%;
-    max-width: 400px; /* Ancho máximo para que no se vean muy anchos en pantallas grandes */
+    max-width: 400px;
+    flex-wrap: wrap;
+}
+
+.presentacion__botones-inferiores {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    flex-wrap: wrap;
+    margin-top: 15px;
 }
 
 .btn {
@@ -105,30 +135,32 @@ body {
     cursor: pointer;
     border-radius: 12px;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    flex-grow: 1; /* Permite que los botones crezcan y ocupen el espacio disponible */
 }
 
-/* Estilos específicos para el botón de Ebook */
+.btn:hover {
+    background-color: var(--color-highlight);
+    color: var(--color-white);
+}
 
 .btn-ebook {
-    border-radius: 50%; /* Esto lo hace completamente redondo */
-    width: 100px; /* Ancho fijo para que sea un círculo */
-    height: 100px; /* Alto fijo para que sea un círculo */
-    display: flex; /* Para centrar el texto dentro del botón */
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    /* Puedes ajustar colores si quieres que sea diferente */
-    background-color: var(--color-highlight); /* Color de fondo */
-    color: var(--color-white); /* Color de texto */
-    border: none; /* Quitamos el borde si no lo quieres */
-    font-size: 1rem; /* Ajusta el tamaño de fuente si es necesario */
-    padding: 0; /* Quitamos el padding para que el tamaño sea solo width/height */
+    background-color: var(--color-highlight);
+    color: var(--color-white);
+    border: none;
+    font-size: 0.9rem;
+    padding: 0;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .btn-ebook:hover {
-    transform: scale(1.1); /* Un efecto de escala al pasar el mouse */
-    background-color: darken(var(--color-highlight), 10%); /* Oscurece el color al pasar el mouse (si usas preprocesadores) */
-    /* O simplemente un color diferente: */
-    background-color: #1a9bc0; /* Un azul ligeramente más oscuro */
+    transform: scale(1.1);
+    background-color: #1a9bc0;
 }
 
 footer {
@@ -140,9 +172,15 @@ footer {
 /* =================================== */
 /* --- 6. Responsive Design (Móvil) --- */
 /* =================================== */
-@media (min-width: 768px) {
-    .presentacion__botones {
-        flex-direction: row; /* En pantallas más grandes, los botones se colocan en fila */
-        justify-content: center;
+@media (max-width: 480px) {
+    .presentacion__botones,
+    .presentacion__botones-inferiores {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .btn {
+        flex-grow: 0;
+        width: 100%;
     }
 }
