@@ -107,9 +107,28 @@ body {
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.btn:hover {
-    background-color: var(--color-highlight);
-    color: var(--color-white);
+/* Estilos específicos para el botón de Ebook */
+
+.btn-ebook {
+    border-radius: 50%; /* Esto lo hace completamente redondo */
+    width: 100px; /* Ancho fijo para que sea un círculo */
+    height: 100px; /* Alto fijo para que sea un círculo */
+    display: flex; /* Para centrar el texto dentro del botón */
+    justify-content: center;
+    align-items: center;
+    /* Puedes ajustar colores si quieres que sea diferente */
+    background-color: var(--color-highlight); /* Color de fondo */
+    color: var(--color-white); /* Color de texto */
+    border: none; /* Quitamos el borde si no lo quieres */
+    font-size: 1rem; /* Ajusta el tamaño de fuente si es necesario */
+    padding: 0; /* Quitamos el padding para que el tamaño sea solo width/height */
+}
+
+.btn-ebook:hover {
+    transform: scale(1.1); /* Un efecto de escala al pasar el mouse */
+    background-color: darken(var(--color-highlight), 10%); /* Oscurece el color al pasar el mouse (si usas preprocesadores) */
+    /* O simplemente un color diferente: */
+    background-color: #1a9bc0; /* Un azul ligeramente más oscuro */
 }
 
 footer {
