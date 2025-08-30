@@ -2,10 +2,14 @@
 /* --- 1. Variables CSS (Mejores Prácticas) --- */
 /* ========================================= */
 :root {
-    --color-primary: #5d9cb8; /* Color de texto principal */
-    --color-highlight: #22D4FD; /* Color de destaque */
-    --color-bg-start: #fbc2eb; /* Color del degradado (inicio) */
-    --color-bg-end: #a6c1ee; /* Color del degradado (fin) */
+    --color-primary: #5d9cb8;
+    /* Color de texto principal */
+    --color-highlight: #22D4FD;
+    /* Color de destaque */
+    --color-bg-start: #fbc2eb;
+    /* Color del degradado (inicio) */
+    --color-bg-end: #a6c1ee;
+    /* Color del degradado (fin) */
     --color-white: #ffffff;
     --font-family: 'Krona One', sans-serif;
 }
@@ -41,7 +45,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px; /* Espacio uniforme entre elementos */
+    gap: 40px;
+    /* Espacio uniforme entre elementos */
     width: 100%;
     max-width: 900px;
 }
@@ -55,7 +60,8 @@ body {
 }
 
 .presentacion__imagen:hover {
-    transform: scale(1.05); /* Efecto sutil al pasar el mouse */
+    transform: scale(1.05);
+    /* Efecto sutil al pasar el mouse */
 }
 
 /* ================================ */
@@ -69,13 +75,14 @@ body {
 }
 
 .presentacion__contenido__titulo {
-    font-size: 2.5rem; /* Usamos 'rem' para un mejor escalado */
+    font-size: 2.5rem;
+    /* Usamos 'rem' para un mejor escalado */
     color: var(--color-highlight);
 }
 
 .titulodestaque {
     color: var(--color-white);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .presentacion__contenido__texto {
@@ -91,7 +98,8 @@ body {
     flex-direction: column;
     gap: 16px;
     width: 100%;
-    max-width: 400px; /* Ancho máximo para que no se vean muy anchos en pantallas grandes */
+    max-width: 400px;
+    /* Ancho máximo para que no se vean muy anchos en pantallas grandes */
 }
 
 .btn {
@@ -110,25 +118,37 @@ body {
 /* Estilos específicos para el botón de Ebook */
 
 .btn-ebook {
-    border-radius: 50%; /* Esto lo hace completamente redondo */
-    width: 100px; /* Ancho fijo para que sea un círculo */
-    height: 100px; /* Alto fijo para que sea un círculo */
-    display: flex; /* Para centrar el texto dentro del botón */
+    border-radius: 50%;
+    /* Esto lo hace completamente redondo */
+    width: 100px;
+    /* Ancho fijo para que sea un círculo */
+    height: 100px;
+    /* Alto fijo para que sea un círculo */
+    display: flex;
+    /* Para centrar el texto dentro del botón */
     justify-content: center;
     align-items: center;
     /* Puedes ajustar colores si quieres que sea diferente */
-    background-color: var(--color-highlight); /* Color de fondo */
-    color: var(--color-white); /* Color de texto */
-    border: none; /* Quitamos el borde si no lo quieres */
-    font-size: 1rem; /* Ajusta el tamaño de fuente si es necesario */
-    padding: 0; /* Quitamos el padding para que el tamaño sea solo width/height */
+    background-color: var(--color-highlight);
+    /* Color de fondo */
+    color: var(--color-white);
+    /* Color de texto */
+    border: none;
+    /* Quitamos el borde si no lo quieres */
+    font-size: 1rem;
+    /* Ajusta el tamaño de fuente si es necesario */
+    padding: 0;
+    /* Quitamos el padding para que el tamaño sea solo width/height */
 }
 
 .btn-ebook:hover {
-    transform: scale(1.1); /* Un efecto de escala al pasar el mouse */
-    background-color: darken(var(--color-highlight), 10%); /* Oscurece el color al pasar el mouse (si usas preprocesadores) */
+    transform: scale(1.1);
+    /* Un efecto de escala al pasar el mouse */
+    background-color: darken(var(--color-highlight), 10%);
+    /* Oscurece el color al pasar el mouse (si usas preprocesadores) */
     /* O simplemente un color diferente: */
-    background-color: #1a9bc0; /* Un azul ligeramente más oscuro */
+    background-color: #1a9bc0;
+    /* Un azul ligeramente más oscuro */
 }
 
 footer {
@@ -142,7 +162,8 @@ footer {
 /* =================================== */
 @media (min-width: 768px) {
     .presentacion__botones {
-        flex-direction: row; /* En pantallas más grandes, los botones se colocan en fila */
+        flex-direction: row;
+        /* En pantallas más grandes, los botones se colocan en fila */
         justify-content: center;
     }
 }
